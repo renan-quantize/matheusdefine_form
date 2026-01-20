@@ -3,224 +3,59 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Seleção de Temas - {{NOME_EMPRESA}}</title>
+<title>Seleção de Temas - Matheus Define</title>
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { 
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-.container {
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-  max-width: 700px;
-  width: 100%;
-  padding: 40px;
-}
-.header {
-  text-align: center;
-  margin-bottom: 30px;
-  padding-bottom: 20px;
-  border-bottom: 2px solid #f1f5f9;
-}
-.logo {
-  font-size: 48px;
-  margin-bottom: 10px;
-}
-h1 {
-  color: #1e293b;
-  font-size: 28px;
-  margin-bottom: 8px;
-}
-.subtitle {
-  color: #64748b;
-  font-size: 16px;
-}
-.info-box {
-  background: #f8fafc;
-  border-left: 4px solid #3b82f6;
-  padding: 16px;
-  border-radius: 8px;
-  margin-bottom: 24px;
-}
-.info-box strong {
-  color: #1e293b;
-  display: block;
-  margin-bottom: 8px;
-}
-.info-box ul {
-  list-style: none;
-  color: #475569;
-  font-size: 14px;
-  line-height: 1.8;
-}
-.info-box li:before {
-  content: "•";
-  color: #3b82f6;
-  font-weight: bold;
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em;
-}
-.tema-card {
-  border: 2px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 16px;
-  transition: all 0.2s ease;
-  cursor: pointer;
-}
-.tema-card:hover {
-  border-color: #3b82f6;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
-}
-.tema-card.selected {
-  border-color: #3b82f6;
-  background: #eff6ff;
-}
-.tema-checkbox {
-  display: flex;
-  align-items: start;
-  gap: 12px;
-}
-.tema-checkbox input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-  margin-top: 2px;
-  cursor: pointer;
-  flex-shrink: 0;
-}
-.tema-content {
-  flex: 1;
-}
-.tema-titulo {
-  font-weight: 600;
-  color: #1e293b;
-  font-size: 16px;
-  margin-bottom: 8px;
-  line-height: 1.4;
-}
-.tema-descricao {
-  color: #64748b;
-  font-size: 14px;
-  line-height: 1.6;
-  margin-bottom: 12px;
-}
-.keywords {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-.keyword-tag {
-  background: #dbeafe;
-  color: #1e40af;
-  padding: 4px 10px;
-  border-radius: 6px;
-  font-size: 12px;
-  font-weight: 500;
-}
-.counter {
-  background: #3b82f6;
-  color: white;
-  padding: 16px;
-  border-radius: 8px;
-  text-align: center;
-  font-weight: 600;
-  font-size: 16px;
-  margin: 24px 0;
-  transition: background 0.3s ease;
-}
-.counter.success {
-  background: #10b981;
-}
-.counter.error {
-  background: #ef4444;
-}
-.btn-submit {
-  width: 100%;
-  background: #10b981;
-  color: white;
-  border: none;
-  padding: 16px;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-.btn-submit:hover:not(:disabled) {
-  background: #059669;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
-}
-.btn-submit:disabled {
-  background: #94a3b8;
-  cursor: not-allowed;
-  transform: none;
-}
-.footer {
-  margin-top: 24px;
-  padding-top: 20px;
-  border-top: 1px solid #e2e8f0;
-  text-align: center;
-  color: #94a3b8;
-  font-size: 13px;
-}
-.loading {
-  display: none;
-  text-align: center;
-  padding: 40px;
-}
-.spinner {
-  border: 4px solid #f3f4f6;
-  border-top: 4px solid #3b82f6;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  animation: spin 1s linear infinite;
-  margin: 0 auto 16px;
-}
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-.success-message, .error-message, .expired-message {
-  display: none;
-  text-align: center;
-  padding: 40px;
-}
-.success-icon, .error-icon, .expired-icon {
-  font-size: 64px;
-  margin-bottom: 16px;
-}
-@media (max-width: 640px) {
-  .container { padding: 24px; }
-  h1 { font-size: 24px; }
-  .tema-card { padding: 16px; }
-}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+.container{background:white;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,0.3);max-width:700px;width:100%;padding:40px}
+.header{text-align:center;margin-bottom:30px;padding-bottom:20px;border-bottom:2px solid #f1f5f9}
+.logo{font-size:48px;margin-bottom:10px}
+h1{color:#1e293b;font-size:28px;margin-bottom:8px}
+.subtitle{color:#64748b;font-size:16px}
+.info-box{background:#f8fafc;border-left:4px solid #3b82f6;padding:16px;border-radius:8px;margin-bottom:24px}
+.info-box strong{color:#1e293b;display:block;margin-bottom:8px}
+.info-box ul{list-style:none;color:#475569;font-size:14px;line-height:1.8}
+.info-box li:before{content:"•";color:#3b82f6;font-weight:bold;display:inline-block;width:1em;margin-left:-1em}
+.tema-card{border:2px solid #e2e8f0;border-radius:12px;padding:20px;margin-bottom:16px;transition:all .2s ease;cursor:pointer}
+.tema-card:hover{border-color:#3b82f6;box-shadow:0 4px 12px rgba(59,130,246,0.1)}
+.tema-card.selected{border-color:#3b82f6;background:#eff6ff}
+.tema-checkbox{display:flex;align-items:start;gap:12px}
+.tema-checkbox input[type="checkbox"]{width:20px;height:20px;margin-top:2px;cursor:pointer;flex-shrink:0}
+.tema-content{flex:1}
+.tema-titulo{font-weight:600;color:#1e293b;font-size:16px;margin-bottom:8px;line-height:1.4}
+.tema-descricao{color:#64748b;font-size:14px;line-height:1.6;margin-bottom:12px}
+.keywords{display:flex;flex-wrap:wrap;gap:6px}
+.keyword-tag{background:#dbeafe;color:#1e40af;padding:4px 10px;border-radius:6px;font-size:12px;font-weight:500}
+.counter{background:#3b82f6;color:white;padding:16px;border-radius:8px;text-align:center;font-weight:600;font-size:16px;margin:24px 0;transition:background .3s ease}
+.counter.success{background:#10b981}
+.counter.error{background:#ef4444}
+.btn-submit{width:100%;background:#10b981;color:white;border:none;padding:16px;border-radius:8px;font-size:16px;font-weight:600;cursor:pointer;transition:all .2s ease}
+.btn-submit:hover:not(:disabled){background:#059669;transform:translateY(-1px);box-shadow:0 4px 12px rgba(16,185,129,0.3)}
+.btn-submit:disabled{background:#94a3b8;cursor:not-allowed;transform:none}
+.footer{margin-top:24px;padding-top:20px;border-top:1px solid #e2e8f0;text-align:center;color:#94a3b8;font-size:13px}
+.loading{display:none;text-align:center;padding:40px}
+.spinner{border:4px solid #f3f4f6;border-top:4px solid #3b82f6;border-radius:50%;width:40px;height:40px;animation:spin 1s linear infinite;margin:0 auto 16px}
+@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.success-message,.error-message,.expired-message{display:none;text-align:center;padding:40px}
+.success-icon,.error-icon,.expired-icon{font-size:64px;margin-bottom:16px}
+@media (max-width:640px){.container{padding:24px}h1{font-size:24px}.tema-card{padding:16px}}
 </style>
 </head>
 <body>
 
 <div class="container">
-  <!-- ESTADO: CARREGANDO -->
-  <div class="loading" id="loadingState">
+  <!-- LOADING INICIAL -->
+  <div class="loading" id="loadingState" style="display:block">
     <div class="spinner"></div>
-    <p style="color: #64748b;">Carregando seus temas...</p>
+    <p style="color:#64748b">Validando acesso...</p>
   </div>
 
-  <!-- ESTADO: FORMULÁRIO -->
-  <div id="formState" style="display:none;">
+  <!-- FORMULÁRIO -->
+  <div id="formState" style="display:none">
     <div class="header">
       <div class="logo">📝</div>
       <h1>Selecione os Temas do Blog</h1>
-      <p class="subtitle"><span id="empresaNome"></span> • <span id="mesAno"></span></p>
+      <p class="subtitle">Matheus Define • janeiro de 2026</p>
     </div>
 
     <div class="info-box">
@@ -228,12 +63,98 @@ h1 {
       <ul>
         <li>Selecione <strong>exatamente 4 temas</strong> que mais se alinham com sua estratégia</li>
         <li>Esses temas serão desenvolvidos nos próximos 2 meses</li>
-        <li>Você tem até <strong><span id="prazoData"></span></strong> para responder</li>
+        <li>Você tem até <strong>25/01/2026</strong> para responder</li>
       </ul>
     </div>
 
     <form id="formTemas">
-      <div id="temasContainer"></div>
+      <div id="temasContainer">
+        
+        <div class="tema-card" onclick="toggleCard(0)">
+          <div class="tema-checkbox">
+            <input type="checkbox" id="tema_0" name="temas_selecionados" value="73" 
+              onclick="event.stopPropagation()" onchange="updateCounter()">
+            <div class="tema-content">
+              <div class="tema-titulo">Checklist de 7 Etapas para Licença de Produtos Controlados</div>
+              <div class="tema-descricao">Compare requisitos da PF e Exército para evitar rejeições de documentos</div>
+              <div class="keywords">
+                <span class="keyword-tag">licença policia federal</span><span class="keyword-tag">produtos controlados</span><span class="keyword-tag">checklist</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tema-card" onclick="toggleCard(1)">
+          <div class="tema-checkbox">
+            <input type="checkbox" id="tema_1" name="temas_selecionados" value="74" 
+              onclick="event.stopPropagation()" onchange="updateCounter()">
+            <div class="tema-content">
+              <div class="tema-titulo">Cálculo de Estoque de Produtos Controlados: Fórmula de Risco</div>
+              <div class="tema-descricao">Calcule o limite máximo permitido baseado em área física e classificação de perigo</div>
+              <div class="keywords">
+                <span class="keyword-tag">produtos controlados</span><span class="keyword-tag">fiscalização</span><span class="keyword-tag">estoque</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tema-card" onclick="toggleCard(2)">
+          <div class="tema-checkbox">
+            <input type="checkbox" id="tema_2" name="temas_selecionados" value="75" 
+              onclick="event.stopPropagation()" onchange="updateCounter()">
+            <div class="tema-content">
+              <div class="tema-titulo">Como a Empresa X Reduziu 80% de Multas com Sistema de Rastreio</div>
+              <div class="tema-descricao">Case de automação de controle de movimentação de produtos químicos controlados</div>
+              <div class="keywords">
+                <span class="keyword-tag">produtos químicos controlados pelo exército</span><span class="keyword-tag">multas</span><span class="keyword-tag">case</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tema-card" onclick="toggleCard(3)">
+          <div class="tema-checkbox">
+            <input type="checkbox" id="tema_3" name="temas_selecionados" value="76" 
+              onclick="event.stopPropagation()" onchange="updateCounter()">
+            <div class="tema-content">
+              <div class="tema-titulo">Lista de Produtos Controlados: PF vs Exército Brasileiro</div>
+              <div class="tema-descricao">Identifique 15 divergências entre as listas oficiais para evitar classificação errada</div>
+              <div class="keywords">
+                <span class="keyword-tag">lista de produtos controlados exército</span><span class="keyword-tag">lista de produtos controlados policia federal</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tema-card" onclick="toggleCard(4)">
+          <div class="tema-checkbox">
+            <input type="checkbox" id="tema_4" name="temas_selecionados" value="77" 
+              onclick="event.stopPropagation()" onchange="updateCounter()">
+            <div class="tema-content">
+              <div class="tema-titulo">5 Erros Fatais na Emissão de Licença de Produtos Controlados</div>
+              <div class="tema-descricao">Evite falhas em formulários e documentação exigida por órgãos de fiscalização</div>
+              <div class="keywords">
+                <span class="keyword-tag">emitir licença de produtos controlados</span><span class="keyword-tag">erros comuns</span><span class="keyword-tag">fiscalização</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tema-card" onclick="toggleCard(5)">
+          <div class="tema-checkbox">
+            <input type="checkbox" id="tema_5" name="temas_selecionados" value="78" 
+              onclick="event.stopPropagation()" onchange="updateCounter()">
+            <div class="tema-content">
+              <div class="tema-titulo">Fiscalização de Produtos Controlados: 3 Cenários de Multa</div>
+              <div class="tema-descricao">Reduza 90% de riscos com análise de casos reais de autuações em 2023</div>
+              <div class="keywords">
+                <span class="keyword-tag">fiscalização de produtos controlados</span><span class="keyword-tag">multas</span><span class="keyword-tag">casos reais</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
 
       <div class="counter" id="contador">0 de 4 temas selecionados</div>
 
@@ -247,205 +168,149 @@ h1 {
     </div>
   </div>
 
-  <!-- ESTADO: SUCESSO -->
+  <!-- JÁ RESPONDIDO -->
   <div class="success-message" id="successState">
     <div class="success-icon">✅</div>
-    <h2 style="color: #10b981; margin-bottom: 12px;">Temas Confirmados!</h2>
-    <p style="color: #64748b;">Seus temas foram registrados com sucesso. Em breve começaremos a produção do conteúdo.</p>
+    <h2 style="color:#10b981;margin-bottom:12px">Temas Confirmados!</h2>
+    <p style="color:#64748b">Seus temas foram registrados com sucesso. Em breve começaremos a produção do conteúdo!</p>
   </div>
 
-  <!-- ESTADO: ERRO -->
+  <!-- ERRO -->
   <div class="error-message" id="errorState">
     <div class="error-icon">❌</div>
-    <h2 style="color: #ef4444; margin-bottom: 12px;">Erro ao Enviar</h2>
-    <p style="color: #64748b;" id="errorMessage">Ocorreu um erro ao processar sua resposta. Por favor, tente novamente.</p>
+    <h2 style="color:#ef4444;margin-bottom:12px">Acesso Negado</h2>
+    <p style="color:#64748b" id="errorMessage">Link inválido ou expirado. Entre em contato conosco.</p>
   </div>
 
-  <!-- ESTADO: EXPIRADO -->
+  <!-- EXPIRADO -->
   <div class="expired-message" id="expiredState">
     <div class="expired-icon">⏰</div>
-    <h2 style="color: #f59e0b; margin-bottom: 12px;">Prazo Expirado</h2>
-    <p style="color: #64748b;">O prazo para seleção de temas expirou. Entre em contato com nossa equipe.</p>
+    <h2 style="color:#f59e0b;margin-bottom:12px">Prazo Expirado</h2>
+    <p style="color:#64748b">O prazo para seleção de temas expirou. Nossa equipe escolherá os temas automaticamente.</p>
   </div>
 </div>
 
 <script>
-// Configuração - será substituída dinamicamente pelo n8n
-const CONFIG = {
-  approvalId: '{{APPROVAL_ID}}',
-  projectId: '{{PROJECT_ID}}',
-  nomeEmpresa: '{{NOME_EMPRESA}}',
-  mesAno: '{{MES_ANO}}',
-  prazo: '{{PRAZO_FORMATADO}}',
-  webhookUrl: '{{WEBHOOK_URL}}',
-  temas: {{TEMAS_JSON}}
+const CONFIG={
+  approvalId:'4921686_1768935220340',
+  token:'7e9f6ef8ef45f84ca8313487b40ef636',
+  projectId:'4921686',
+  nomeEmpresa:'Matheus Define',
+  webhookUrl:'https://n8n-webhook.srv.superix.dev/webhook/dc624383-20d1-44ab-904e-a7572b30d46e'
 };
 
-// Estado
-let selectedCount = 0;
+let selectedCount=0;
 
-// Inicialização
-document.addEventListener('DOMContentLoaded', async () => {
-  await init();
+// 🔐 VALIDAÇÃO INICIAL SIMPLIFICADA
+document.addEventListener('DOMContentLoaded',async()=>{
+  const urlParams=new URLSearchParams(window.location.search);
+  const urlToken=urlParams.get('token');
+  const urlApproval=urlParams.get('approval');
+  
+  // Validar token da URL
+  if(!urlToken||urlToken!==CONFIG.token||urlApproval!==CONFIG.approvalId){
+    showState('error');
+    document.getElementById('errorMessage').textContent='Link inválido. Verifique o email e use o link correto.';
+    return;
+  }
+  
+  // Token válido, mostra formulário
+  showState('form');
 });
 
-async function init() {
-  // Verificar se já foi respondido ou expirou
-  const status = await checkApprovalStatus();
-  
-  if (status === 'respondido') {
-    showState('success');
-    return;
-  }
-  
-  if (status === 'expirado') {
-    showState('expired');
-    return;
-  }
-  
-  // Renderizar formulário
-  renderForm();
-  showState('form');
-}
-
-async function checkApprovalStatus() {
-  // Aqui você pode fazer uma chamada para verificar o status
-  // Por enquanto vamos assumir que está "pendente"
-  return 'pendente';
-}
-
-function renderForm() {
-  // Preencher dados do header
-  document.getElementById('empresaNome').textContent = CONFIG.nomeEmpresa;
-  document.getElementById('mesAno').textContent = CONFIG.mesAno;
-  document.getElementById('prazoData').textContent = CONFIG.prazo;
-  
-  // Renderizar temas
-  const container = document.getElementById('temasContainer');
-  CONFIG.temas.forEach((tema, index) => {
-    const card = createTemaCard(tema, index);
-    container.appendChild(card);
-  });
-  
-  // Event listener do form
-  document.getElementById('formTemas').addEventListener('submit', handleSubmit);
-}
-
-function createTemaCard(tema, index) {
-  const card = document.createElement('div');
-  card.className = 'tema-card';
-  card.onclick = () => toggleCheckbox(index);
-  
-  const keywords = tema.keywords_relacionadas
-    .map(kw => `<span class="keyword-tag">${kw}</span>`)
-    .join('');
-  
-  card.innerHTML = `
-    <div class="tema-checkbox">
-      <input type="checkbox" 
-             id="tema_${index}" 
-             name="temas_selecionados" 
-             value="${tema.tema_id}"
-             onclick="event.stopPropagation();"
-             onchange="updateCounter()">
-      <div class="tema-content">
-        <div class="tema-titulo">${tema.titulo}</div>
-        <div class="tema-descricao">${tema.descricao}</div>
-        <div class="keywords">${keywords}</div>
-      </div>
-    </div>
-  `;
-  
-  return card;
-}
-
-function toggleCheckbox(index) {
-  const checkbox = document.getElementById(`tema_${index}`);
-  checkbox.checked = !checkbox.checked;
+function toggleCard(idx){
+  const cb=document.getElementById('tema_'+idx);
+  cb.checked=!cb.checked;
   updateCounter();
 }
 
-function updateCounter() {
-  const checkboxes = document.querySelectorAll('input[name="temas_selecionados"]:checked');
-  selectedCount = checkboxes.length;
+function updateCounter(){
+  const cbs=document.querySelectorAll('input[name="temas_selecionados"]:checked');
+  selectedCount=cbs.length;
   
-  const contador = document.getElementById('contador');
-  const btn = document.getElementById('btnSubmit');
+  const contador=document.getElementById('contador');
+  const btn=document.getElementById('btnSubmit');
   
-  contador.textContent = `${selectedCount} de 4 temas selecionados`;
+  contador.textContent=selectedCount+' de 4 temas selecionados';
+  contador.className='counter';
   
-  // Atualizar estilo do contador
-  contador.className = 'counter';
-  if (selectedCount === 4) {
+  if(selectedCount===4){
     contador.classList.add('success');
-    btn.disabled = false;
-  } else if (selectedCount > 4) {
+    btn.disabled=false;
+  }else if(selectedCount>4){
     contador.classList.add('error');
-    btn.disabled = true;
-  } else {
-    btn.disabled = true;
+    btn.disabled=true;
+  }else{
+    btn.disabled=true;
   }
   
-  // Atualizar visual dos cards
-  document.querySelectorAll('.tema-card').forEach((card, index) => {
-    const checkbox = document.getElementById(`tema_${index}`);
-    if (checkbox.checked) {
-      card.classList.add('selected');
-    } else {
-      card.classList.remove('selected');
-    }
+  document.querySelectorAll('.tema-card').forEach((card,i)=>{
+    const cb=document.getElementById('tema_'+i);
+    card.classList.toggle('selected',cb.checked);
   });
 }
 
-async function handleSubmit(e) {
+document.getElementById('formTemas').addEventListener('submit',async function(e){
   e.preventDefault();
   
-  if (selectedCount !== 4) {
+  if(selectedCount!==4){
     alert('Por favor, selecione exatamente 4 temas!');
     return;
   }
   
   showState('loading');
+  document.querySelector('#loadingState p').textContent='Salvando sua seleção...';
   
-  // Coletar IDs dos temas selecionados
-  const checkboxes = document.querySelectorAll('input[name="temas_selecionados"]:checked');
-  const temasIds = Array.from(checkboxes).map(cb => cb.value);
+  const cbs=document.querySelectorAll('input[name="temas_selecionados"]:checked');
+  const temasIds=Array.from(cbs).map(cb=>cb.value);
   
-  const payload = {
-    approval_id: CONFIG.approvalId,
-    project_id: CONFIG.projectId,
-    nome_empresa: CONFIG.nomeEmpresa,
-    temas_selecionados: temasIds
+  const payload={
+    token:CONFIG.token,
+    approval_id:CONFIG.approvalId,
+    project_id:CONFIG.projectId,
+    nome_empresa:CONFIG.nomeEmpresa,
+    temas_selecionados:temasIds
   };
   
-  try {
-    const response = await fetch(CONFIG.webhookUrl, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
+  try{
+    const resp=await fetch(CONFIG.webhookUrl,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(payload)
     });
     
-    if (response.ok) {
+    const data=await resp.json();
+    
+    if(resp.ok){
       showState('success');
-    } else {
-      throw new Error('Erro ao enviar');
+      document.querySelector('#successState h2').textContent='Temas Confirmados!';
+      document.querySelector('#successState p').textContent='Seus temas foram registrados com sucesso. Em breve começaremos a produção do conteúdo.';
+    }else{
+      // Tratamento de erros específicos
+      if(data.status===409){
+        showState('success');
+        document.querySelector('#successState h2').textContent='Formulário Já Respondido';
+        document.querySelector('#successState p').textContent='Você já selecionou seus temas anteriormente. Aguarde a produção do conteúdo!';
+      }else if(data.status===410){
+        showState('expired');
+      }else{
+        throw new Error(data.message||'Erro ao enviar');
+      }
     }
-  } catch (error) {
-    console.error('Erro:', error);
-    document.getElementById('errorMessage').textContent = 
-      'Não foi possível enviar sua resposta. Verifique sua conexão e tente novamente.';
+  }catch(err){
+    console.error('Erro:',err);
+    document.getElementById('errorMessage').textContent=err.message||'Não foi possível enviar. Tente novamente.';
     showState('error');
   }
-}
+});
 
-function showState(state) {
-  const states = ['loading', 'form', 'success', 'error', 'expired'];
-  states.forEach(s => {
-    const el = document.getElementById(`${s}State`);
-    if (el) el.style.display = s === state ? 'block' : 'none';
+function showState(state){
+  const states=['loading','form','success','error','expired'];
+  states.forEach(s=>{
+    const el=document.getElementById(s+'State');
+    if(el)el.style.display=s===state?'block':'none';
   });
 }
 </script>
-
 </body>
 </html>
